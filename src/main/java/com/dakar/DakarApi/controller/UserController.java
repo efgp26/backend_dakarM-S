@@ -165,4 +165,21 @@ public class UserController {
         return  ResponseEntity.ok(new ApiResponses<>(HttpStatus.OK.value(), true, "Usuario encontrado", userDTOList ));
     }
 
+    @PutMapping("/udpate/{id}")
+    public ResponseEntity<?> updateUser(@RequestBody @Valid CreateUserDTO userDTO, @PathVariable Long id){
+        Optional<UserEntity> optionalUser = userService.findById(id);
+        if (optionalUser.isPresent()){
+            UserEntity user = optionalUser.get();
+            user.setName(userDTO.getName());
+            user.setLastName(userDTO.getLastName());
+            user.setUsername(userDTO.getEmail());
+            user.setNumbrePhone(userDTO.getNumbrePhone());
+            user.setEmail(userDTO.getEmail());
+            System.out.println("esta dentro del if");
+            userService.save(user);
+            return ResponseEntity.ok(new ApiResponses<>(HttpStatus.OK.value(), true, "Usuario actualizadp", null ));
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiResponses<>(HttpStatus.NOT_FOUND.value(), false, "Usuario no encontrado", null));
+    }
+
 }

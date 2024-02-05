@@ -26,33 +26,22 @@ public class BikeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
-    @Size(max = 10)
     @Column(name = "placa", unique = true)
     private String licensePlate;
 
-    @NotBlank
-    @Size(max = 6)
     @Column(name = "cilindraje")
     private String displacement;
 
-    @NotBlank
-    @Size(max = 4)
     @Column(name = "modelo")
     private String dateModel;
 
-    @NotBlank
-    @Size(max = 30)
     @Column(name = "marca")
     private String brand;
 
-    @NotBlank
-    @Size(max = 30)
+
     @Column(name = "referencia")
     private String reference;
 
-    @NotBlank
-    @Size(max = 10)
     @Column(name = "kilometraje")
     private String mileage;
 

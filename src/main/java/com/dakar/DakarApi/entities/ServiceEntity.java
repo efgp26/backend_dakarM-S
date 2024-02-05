@@ -26,13 +26,9 @@ public class ServiceEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
-    @Size(max = 100)
     @Column(name = "nombre")
     private String name;
 
-    @NotBlank
-    @Size(max = 800)
     @Column(name = "descripcion")
     private String description;
 

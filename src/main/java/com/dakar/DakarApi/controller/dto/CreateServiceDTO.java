@@ -3,6 +3,7 @@ package com.dakar.DakarApi.controller.dto;
 import com.dakar.DakarApi.entities.BikeEntity;
 import com.dakar.DakarApi.entities.UserEntity;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,15 +20,22 @@ import java.time.LocalDate;
 public class CreateServiceDTO {
 
     @NotBlank
+    @Size(min = 3, max = 150)
     private String name;
 
     @NotBlank
     private String description;
+
+    @NotBlank
     private LocalDate dateAdmission;
     private BigDecimal payment;
     private BigDecimal valueService;
+
+    @NotBlank
     private Boolean stade;
     private LocalDate departureDate;
+
+
     private BikeEntity bikeEntity;
     private UserEntity userEntity;
 }

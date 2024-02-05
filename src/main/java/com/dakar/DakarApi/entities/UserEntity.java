@@ -28,29 +28,21 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
     @Column(name = "correo_electronico", unique = true)
     private String email;
 
-    @NotBlank
     @Column(name = "contrasena")
     private String password;
 
     @Column(name = "nombre_usuario_session")
     private String username;
 
-    @NotBlank
-    @Size(max = 50)
     @Column(name = "nombre")
     private String name;
 
-    @NotBlank
-    @Size(max = 50)
     @Column(name = "apellidos")
     private String lastName;
 
-    @NotBlank
-    @Size(max = 12)
     @Column(name = "telefono")
     private String numbrePhone;
 

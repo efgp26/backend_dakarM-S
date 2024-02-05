@@ -73,7 +73,7 @@ public class ServiceController
 
 
     @PostMapping("/save")
-    public ResponseEntity<?> save(@RequestBody CreateServiceDTO createServiceDTO){
+    public ResponseEntity<?> save(@RequestBody @Valid CreateServiceDTO createServiceDTO){
         if (createServiceDTO != null){
             ServiceEntity serviceEntity = ServiceEntity.builder()
                     .name(createServiceDTO.getName())
