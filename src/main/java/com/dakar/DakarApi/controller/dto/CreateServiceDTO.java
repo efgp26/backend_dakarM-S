@@ -26,12 +26,10 @@ public class CreateServiceDTO {
     @NotBlank
     private String description;
 
-    @NotBlank
     private LocalDate dateAdmission;
     private BigDecimal payment;
     private BigDecimal valueService;
 
-    @NotBlank
     private Boolean stade;
     private LocalDate departureDate;
 

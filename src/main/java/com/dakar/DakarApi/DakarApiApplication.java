@@ -29,6 +29,7 @@ public class DakarApiApplication {
 	@Autowired
 	PasswordEncoder passwordEncoder;
 
+
 	@Bean
 	CommandLineRunner init() {
 		return args -> {

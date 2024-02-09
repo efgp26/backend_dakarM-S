@@ -1,11 +1,12 @@
 package com.dakar.DakarApi.controller;
 
 import com.dakar.DakarApi.controller.dto.LoginDTO;
+import com.dakar.DakarApi.entities.ApiResponses;
 import com.dakar.DakarApi.security.jwt.JwtUtils;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -29,6 +30,6 @@ public class LoginController {
 
     @PostMapping("/logout")
     public ResponseEntity<?> logout(@RequestHeader("Authorization") String authToken) {
-        return ResponseEntity.ok().build();
+        return  ResponseEntity.ok(new ApiResponses<>(HttpStatus.OK.value(), true, "Usuario guardado", null ));
     }
 }

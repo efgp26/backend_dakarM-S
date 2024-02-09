@@ -89,7 +89,7 @@ public class ServiceController
             serviceEntityService.save(serviceEntity);
             return  ResponseEntity.ok(new ApiResponses<>(HttpStatus.OK.value(), true, "Usuario guardado", createServiceDTO ));
         }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiResponses<>(HttpStatus.NOT_FOUND.value(), false, "servicio no encontrado", null));
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponses<>(HttpStatus.BAD_REQUEST.value(), false, "servicio no encontrado", null));
     }
 
     @DeleteMapping("/delete/{id}")
